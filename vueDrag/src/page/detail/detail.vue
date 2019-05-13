@@ -10,8 +10,9 @@
 </template>
 
 <script>
-  import get from '../../api/get'
-  import axios from 'axios'
+  // import get from '../../api/get'
+  import fetch from '../../api/utils/fetch'
+  import $axios from  'axios'
     export default {
         name: "detail",
         data(){
@@ -23,18 +24,42 @@
           }
         },
       mounted(){
-          this.handletype()
+          this.gethttp()
+
       },
       methods:{
-        handletype(){
-          this.$http.get(this.url.pagePath) //把url地址换成你的接口地址即可
+
+        gethttp(){
+          // axios.get('https://mall.mingdiao.com.cn/WeChatGoods/public/index.php/collocation/get/goods/type', {
+          //   params: {
+          //     cat_id:2327
+          //   }
+          // })
+          //   .then(function (response) {
+          //     console.log(response);
+          //   })
+          //   .catch(function (error) {
+          //     console.log(error);
+          //   });
+
+          // get(this.url.pagePath,this.cat_id,false).then((res)=>{
+          //   console.log(res)
+          // }).catch((err)=>{
+          //   console.log("请求失败")
+          // }),
+
+          this.$axios({
+            method: 'get',
+            url: 'https://mall.mingdiao.com.cn/WeChatGoods/public/index.php/collocation/get/goods/type?cat_id=2327'
+          })
             .then(res => {
-              console.log(res);
+              console.log(res)
             })
             .catch(err => {
-              console.log('请求失败');
-            })
-        }
+            console.log("god")
+          })
+
+        },
       }
     }
 </script>

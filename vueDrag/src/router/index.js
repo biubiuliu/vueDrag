@@ -9,11 +9,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'Menu',
-      component:()=>('../components/commons/menu'),
-    },
+    // {
+    //   path: '/',
+    //   name: 'Menu',
+    //   component:()=>('../components/commons/menu'),
+    // },
     {
       path: '/Menu',
       name: 'Menu',

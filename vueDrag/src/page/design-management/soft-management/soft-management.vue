@@ -21,7 +21,7 @@
         },
       methods:{
           getDetail(){
-            let routeData = this.$router.resolve({ path: '/detail', query: {  id: 1 } });
+            let routeData = this.$router.resolve({ path: '/detail'});
             window.open(routeData.href, '_blank');
           }
       }

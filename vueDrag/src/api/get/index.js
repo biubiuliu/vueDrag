@@ -5,12 +5,11 @@ import Qs from 'qs'
 axios.defaults.baseURL = 'https://mall.mingdiao.com.cn/';
 //请求带cookie
 axios.defaults.withCredentials = true;
-
 export default (url, data = {}, qs = true) => {
   return axios({
     method: 'get',
     url,
     data: qs ? Qs.stringify(data) : data,
-    headers: {"Access-Control-Allow-Origin":"*"},
+    headers: {'X-Requested-With': 'XMLHttpRequest'},
   });
 };
